@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanaya Wellness Retreat — Svaneti · dome hall, eco-cabins, sauna in Latali</title>
+<meta name="description" content="Shanaya Wellness Retreat in Latali, Upper Svaneti: five timber eco-cabins sleeping ten, a 120 m² dome hall for practice, a sauna with a plunge pond and three meals a day. Reserved for one group at a time.">
+<meta property="og:title" content="Shanaya Wellness Retreat · Svaneti">
+<meta property="og:description" content="A wellness retreat in the mountains of Svaneti, reserved for one group at a time: five eco-cabins, a 120 m² dome hall, sauna with a plunge pond, three meals a day.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@400;500;600;700&family=Noto+Serif+Georgian:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22302C;
+  --paper:#F1F3EF;
+  --stone:#75817C;
+  --wood:#A97B48;
+  --glacier:#4C8378;
+  --line:#D9DED9;
+  --display:"Cormorant Garamond","Noto Serif Georgian",serif;
+  --body:"Manrope","Noto Sans Georgian",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+
+/* ---------- header ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(241,243,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.wordmark{font-family:var(--display);font-weight:600;font-size:1.3rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.wordmark small{font-family:var(--body);font-size:.62rem;font-weight:700;letter-spacing:.18em;color:var(--stone);margin-left:10px}
+nav.main{display:flex;gap:20px}
+nav.main a{text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--stone)}
+nav.main a:hover,nav.main a:focus-visible{color:var(--ink)}
+.langs{display:flex;gap:2px;border:1px solid var(--line);border-radius:20px;padding:2px}
+.langs button{border:0;background:transparent;font-family:var(--body);font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:16px;cursor:pointer;color:var(--stone)}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+:focus-visible{outline:2px solid var(--glacier);outline-offset:2px}
+@media(max-width:960px){nav.main{display:none}.wordmark small{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;
+  background:linear-gradient(160deg,#3c4f49 0%,#5c6f66 45%,#8d9a90 100%);}
+.hero .photo{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .8s}
+.hero .photo.on{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,28,25,.74) 0%,rgba(20,28,25,.15) 55%,rgba(20,28,25,.25) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:110px;padding-top:140px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#cfd9d2;margin-bottom:14px}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(3.4rem,9vw,6.4rem);line-height:1;letter-spacing:.03em}
+.descriptor{font-size:.95rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#d8c5ab;margin-top:10px}
+.hero p.sub{max-width:38em;margin-top:22px;font-size:1.05rem;color:#e4e9e4}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.9rem;letter-spacing:.04em;padding:14px 26px;border-radius:3px;transition:transform .15s,background .15s;border:0;cursor:pointer;font-family:var(--body)}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--wood);color:#fff}
+.btn.ghost{border:1px solid rgba(255,255,255,.75);color:#fff;background:transparent}
+
+/* ridgeline signature */
+.ridge{display:block;width:100%;height:70px;margin-top:-1px;background:transparent}
+.ridge path{fill:var(--paper)}
+.hero .ridge{position:absolute;bottom:-1px;left:0;z-index:3}
+
+/* ---------- sections ---------- */
+section{padding:80px 0}
+.kicker{font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--glacier);margin-bottom:12px}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.15;margin-bottom:18px}
+.lead{max-width:46em;color:#3d4b46}
+
+/* facts strip */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.fact{background:var(--paper);padding:26px 22px}
+.fact b{display:block;font-family:var(--display);font-size:1.9rem;font-weight:600;line-height:1.1;margin-bottom:6px}
+.fact small{font-size:.85rem;color:var(--stone);font-weight:600;letter-spacing:.03em}
+
+/* amenities */
+.amen{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
+.amen .card{border:1px solid var(--line);border-left:3px solid var(--glacier);background:#fff;padding:26px 24px;border-radius:3px}
+.amen .card:last-child{grid-column:1/-1}
+.card h3{font-family:var(--display);font-size:1.4rem;font-weight:600;margin-bottom:8px}
+.card p{color:#3d4b46;font-size:.95rem}
+@media(max-width:700px){.amen{grid-template-columns:1fr}.amen .card:last-child{grid-column:auto}}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.ph{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:3px;background:linear-gradient(150deg,#dfe4de,#c6cfc7)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph .cap{position:absolute;left:0;bottom:0;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5e6a64;padding:8px 10px}
+.ph.big{grid-column:span 2}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr}.ph.big{grid-column:span 2}}
+
+/* terms (dark) */
+.terms{background:var(--ink);color:var(--paper)}
+.terms h2{color:#fff}
+.terms .lead{color:#c7d2cb}
+.terms ul{list-style:none;margin:26px 0 34px;max-width:46em}
+.terms li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);display:flex;gap:12px;align-items:baseline}
+.terms li::before{content:"—";color:var(--wood);font-weight:700}
+.terms .cta-row{margin-top:0}
+.terms .btn.ghost{border-color:rgba(255,255,255,.6)}
+
+/* availability */
+.calbox{margin-top:36px;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff}
+.calbox iframe{display:block;width:100%;height:560px;border:0}
+.calnote{padding:40px 26px;text-align:center;color:var(--stone);font-size:.95rem}
+.hint{margin-top:14px;font-size:.85rem;color:var(--stone)}
+
+/* location */
+.loc{display:grid;grid-template-columns:1fr 1.2fr;gap:44px;align-items:start}
+.loc iframe{width:100%;height:420px;border:0;border-radius:4px;filter:grayscale(15%)}
+.loc address{font-style:normal;margin-top:18px;color:#3d4b46}
+.loc a.map{display:inline-block;margin-top:14px;font-weight:700;font-size:.9rem;color:var(--glacier)}
+@media(max-width:820px){.loc{grid-template-columns:1fr}}
+
+/* booking */
+.book{background:#e7ebe6}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px;max-width:760px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#4b5a54}
+input,textarea{font-family:var(--body);font-size:1rem;padding:12px 14px;border:1px solid #c3ccc4;border-radius:3px;background:#fff;color:var(--ink)}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--glacier);outline-offset:0;border-color:var(--glacier)}
+.sendrow{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.wa{background:#1f7a5a;color:#fff}
+.tg{background:#2a7ea8;color:#fff}
+.tg-only{display:none}
+body.has-tg .tg-only{display:inline-block}
+@media(max-width:640px){form{grid-template-columns:1fr}}
+
+/* footer */
+footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--stone);font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:baseline}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="wordmark" href="#top">Shanaya<small>wellness retreat · svaneti</small></a>
+    <nav class="main" aria-label="Sections">
+      <a href="#stay" data-i18n="nav_stay"></a>
+      <a href="#terms" data-i18n="nav_terms"></a>
+      <a href="#dates" data-i18n="nav_dates"></a>
+      <a href="#location" data-i18n="nav_loc"></a>
+      <a href="#book" data-i18n="nav_book"></a>
+    </nav>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      <button type="button" data-lang="ka" aria-pressed="false">KA</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="photo" id="heroPhoto"></div>
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="hero_eyebrow"></p>
+    <h1>Shanaya</h1>
+    <p class="descriptor">wellness retreat · Svaneti</p>
+    <p class="sub" data-i18n="hero_sub"></p>
+    <div class="cta-row">
+      <button type="button" class="btn solid" id="heroWa" data-i18n="cta_dates"></button>
+      <button type="button" class="btn ghost" id="heroDeck" data-i18n="cta_deck"></button>
+    </div>
+  </div>
+  <svg class="ridge" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,70 L0,52 L120,38 L230,55 L340,20 L430,44 L560,8 L650,36 L760,14 L880,48 L990,26 L1100,50 L1210,30 L1320,54 L1440,40 L1440,70 Z"/>
+  </svg>
+</div>
+
+<section id="stay">
+  <div class="wrap">
+    <p class="kicker" data-i18n="stay_kicker"></p>
+    <h2 data-i18n="stay_title"></h2>
+    <p class="lead" data-i18n="stay_lead"></p>
+    <div class="facts">
+      <div class="fact"><b>10</b><small data-i18n="fact_guests"></small></div>
+      <div class="fact"><b>120 m²</b><small data-i18n="fact_dome"></small></div>
+      <div class="fact"><b>3×</b><small data-i18n="fact_meals"></small></div>
+      <div class="fact"><b>1</b><small data-i18n="fact_group"></small></div>
+    </div>
+    <div class="amen">
+      <div class="card"><h3 data-i18n="am1_t"></h3><p data-i18n="am1_d"></p></div>
+      <div class="card"><h3 data-i18n="am2_t"></h3><p data-i18n="am2_d"></p></div>
+      <div class="card"><h3 data-i18n="am3_t"></h3><p data-i18n="am3_d"></p></div>
+      <div class="card"><h3 data-i18n="am4_t"></h3><p data-i18n="am4_d"></p></div>
+      <div class="card"><h3 data-i18n="am5_t"></h3><p data-i18n="am5_d"></p></div>
+    </div>
+    <div class="gallery">
+      <div class="ph big"><span class="cap" data-i18n="ph_1"></span><img src="assets/photo-1.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph"><span class="cap" data-i18n="ph_2"></span><img src="assets/photo-2.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph"><span class="cap" data-i18n="ph_3"></span><img src="assets/photo-3.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph"><span class="cap" data-i18n="ph_4"></span><img src="assets/photo-4.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph"><span class="cap" data-i18n="ph_5"></span><img src="assets/photo-5.jpg" alt="" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+
+<section class="terms" id="terms">
+  <div class="wrap">
+    <p class="kicker" data-i18n="terms_kicker"></p>
+    <h2 data-i18n="terms_title"></h2>
+    <p class="lead" data-i18n="terms_lead"></p>
+    <ul>
+      <li data-i18n="terms_li1"></li>
+      <li data-i18n="terms_li2"></li>
+      <li data-i18n="terms_li3"></li>
+      <li data-i18n="terms_li4"></li>
+    </ul>
+    <div class="cta-row">
+      <button type="button" class="btn solid" id="deckWa" data-i18n="deck_wa"></button>
+      <button type="button" class="btn ghost tg-only" id="deckTg" data-i18n="deck_tg"></button>
+    </div>
+  </div>
+</section>
+
+<section id="dates">
+  <div class="wrap">
+    <p class="kicker" data-i18n="dates_kicker"></p>
+    <h2 data-i18n="dates_title"></h2>
+    <p class="lead" data-i18n="dates_lead"></p>
+    <div class="calbox" id="calbox">
+      <p class="calnote" data-i18n="cal_placeholder"></p>
+    </div>
+    <p class="hint" data-i18n="dates_hint"></p>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap loc">
+    <div>
+      <p class="kicker" data-i18n="loc_kicker"></p>
+      <h2 data-i18n="loc_title"></h2>
+      <p class="lead" data-i18n="loc_lead"></p>
+      <address data-i18n="loc_addr"></address>
+      <a class="map" href="https://www.google.com/maps?q=43.00820,42.63173" target="_blank" rel="noopener" data-i18n="loc_open"></a>
+    </div>
+    <iframe title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=43.00820,42.63173&z=13&output=embed"></iframe>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <p class="kicker" data-i18n="book_kicker"></p>
+    <h2 data-i18n="book_title"></h2>
+    <p class="lead" data-i18n="book_lead"></p>
+    <form id="bookForm">
+      <div class="field"><label for="fname" data-i18n="f_name"></label><input id="fname" type="text" autocomplete="name"></div>
+      <div class="field"><label for="fformat" data-i18n="f_format"></label><input id="fformat" type="text"></div>
+      <div class="field"><label for="fguests" data-i18n="f_guests"></label><input id="fguests" type="number" min="1" max="10" value="10"></div>
+      <div class="field"><label for="fin" data-i18n="f_in"></label><input id="fin" type="date"></div>
+      <div class="field"><label for="fout" data-i18n="f_out"></label><input id="fout" type="date"></div>
+      <div class="field full"><label for="fmsg" data-i18n="f_msg"></label><textarea id="fmsg"></textarea></div>
+      <div class="sendrow">
+        <button type="button" class="btn wa" id="sendWa" data-i18n="f_send_wa"></button>
+        <button type="button" class="btn tg tg-only" id="sendTg" data-i18n="f_send_tg"></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Shanaya Wellness Retreat</span>
+    <span data-i18n="foot_addr"></span>
+    <a href="https://wa.me/995555932437">WhatsApp +995 555 93 24 37</a>
+  </div>
+</footer>
+
+<script>
+/* ================= SETTINGS ================= */
+const WHATSAPP = "995555932437";
+const TELEGRAM = ""; // <-- ник Telegram без @, напр. "shanaya_svaneti". Пока пусто, кнопки Telegram скрыты
+const CALENDAR_ID = ""; // <-- ID публичного Google Календаря, напр. "abc123@group.calendar.google.com"
+/* ============================================ */
+
+const T = {
+en:{
+ nav_stay:"The Retreat", nav_terms:"Terms", nav_dates:"Availability", nav_loc:"Getting Here", nav_book:"Request Dates",
+ hero_eyebrow:"Latali · Upper Svaneti · 1,400 m",
+ hero_sub:"A wellness retreat in the mountains of Svaneti, reserved for one group at a time. Five timber eco-cabins sleeping ten, a 120 m² dome hall for practice, a sauna with a plunge pond, and three meals a day. One package, one group, and no one else around.",
+ cta_dates:"Request dates on WhatsApp", cta_deck:"Get the deck",
+ stay_kicker:"The Retreat", stay_title:"Made for retreats",
+ stay_lead:"Shanaya sits in Latali, high in Upper Svaneti, where the setting does part of the work for you. Mountain air, quiet, food grown on this land, and villages where staying healthy into old age is simply how life goes. You bring your group and lead the practice; we take care of the rest. Transfers from anywhere in Georgia, arrivals, meals adapted to any diet, and a property reserved entirely for you, so nothing interrupts your group's rhythm. In the free hours we show you the region: Svan towers and frescoed churches, hikes, tours across Svaneti, hands-on workshops, all shaped around your retreat format. Organisers also get a ready media kit with photography, venue copy, and the case for Svaneti over Bali or Portugal.",
+ fact_guests:"guests + facilitator", fact_dome:"practice hall", fact_meals:"meals a day included", fact_group:"group, the whole place to yourselves",
+ am1_t:"Dome hall · 120 m²",
+ am1_d:"A warm timber dome with room for the whole group. Yoga, breathwork, meditation and evening circles in any weather, with the mountains beyond the panoramic glass.",
+ am2_t:"Five eco-cabins",
+ am2_d:"Timber cabins for two, each with its own bathroom. Ten guests in total, with rooming planned together with you.",
+ am3_t:"Sauna and pond",
+ am3_d:"Heat and cold water a few steps from the hall, a ready-made recovery ritual for your programme.",
+ am4_t:"Kitchen and meals",
+ am4_d:"Three meals a day, cooked from local produce. Menus agreed in advance, from detox to vegetarian or gluten-free, and a Svan farewell dinner at the shared table to close.",
+ am5_t:"Regional programme",
+ am5_d:"Excursions, hikes, tours and workshops in the free hours. Booked as a separate package, with a guide accompanying the group throughout.",
+ ph_1:"Practice in the hall", ph_2:"The dome hall", ph_3:"An eco-cabin", ph_4:"Sauna and pond", ph_5:"The shared table",
+ terms_kicker:"Terms", terms_title:"Packages built around your format",
+ terms_lead:"Shanaya is booked whole, by one group of up to ten guests. The package covers every cabin, the dome hall, the sauna and pond, and three meals a day, which keeps the maths of your retreat simple. Transfers and the regional programme are priced separately, around your route and dates. Package terms, the cancellation policy and returning-organiser offers are all in the deck.",
+ terms_li1:"Every cabin, the hall, sauna and pond",
+ terms_li2:"Meals for the whole group included",
+ terms_li3:"Packages for yoga retreats, recovery programmes and private groups",
+ terms_li4:"We hold your dates while you gather your group",
+ deck_wa:"Get the deck on WhatsApp", deck_tg:"Get the deck on Telegram",
+ dates_kicker:"Availability", dates_title:"The Shanaya calendar",
+ dates_lead:"Booked dates are marked; the rest are open. Organisers tend to book three to six months ahead, so come early for seasonal dates. We confirm requests the same day.",
+ cal_placeholder:"The availability calendar will appear here soon. Meanwhile, ask about your dates via WhatsApp.",
+ dates_hint:"The calendar shows bookings for the whole property.",
+ loc_kicker:"Getting Here", loc_title:"Group logistics",
+ loc_lead:"Shanaya sits in Latali, between Mestia and Becho, a twenty-minute drive from Mestia. Transfers from anywhere in Georgia are arranged as a separate service: guests fly into Tbilisi, Kutaisi or Batumi, and we bring the group from there. Routes and travel times are in the deck.",
+ loc_addr:"Latali community, Mestia municipality, Samegrelo–Upper Svaneti, Georgia · 43.00820, 42.63173",
+ loc_open:"Open in Google Maps →",
+ book_kicker:"Request Dates", book_title:"Request dates for your retreat",
+ book_lead:"Fill in the form and WhatsApp or Telegram opens with a ready message. We reply the same day, send the deck, and hold your dates while you gather your group.",
+ f_name:"Name", f_format:"Retreat format", f_guests:"Number of guests", f_in:"Check-in", f_out:"Check-out", f_msg:"Anything we should know (meals, programme, transfers)",
+ f_send_wa:"Send on WhatsApp", f_send_tg:"Send on Telegram",
+ foot_addr:"Latali community, Mestia municipality, Samegrelo–Upper Svaneti, Georgia",
+ wa_msg:(n,f,g,i,o,m)=>`Hello! I'm planning a retreat at Shanaya Wellness Retreat, Svaneti.\nName: ${n}\nFormat: ${f}\nGuests: ${g}\nCheck-in: ${i}\nCheck-out: ${o}${m?`\nDetails: ${m}`:""}`,
+ deck_msg:"Hello! Please send me the Shanaya Wellness Retreat deck."
+},
+ru:{
+ nav_stay:"Велнес-центр", nav_terms:"Условия", nav_dates:"Даты", nav_loc:"Как добраться", nav_book:"Запрос дат",
+ hero_eyebrow:"Латали · Верхняя Сванетия · 1 400 м",
+ hero_sub:"Велнес-центр в горах Сванетии, который целиком переходит вашей группе: пять деревянных эко-коттеджей на десять гостей, купольный зал 120 м² для практик, сауна с прудом и трёхразовое питание. Один пакет, одна группа, посторонних здесь не бывает.",
+ cta_dates:"Запросить даты в WhatsApp", cta_deck:"Получить презентацию",
+ stay_kicker:"Велнес-центр", stay_title:"Создано для ретритов",
+ stay_lead:"Shanaya находится в Латали, в горах Верхней Сванетии, где среда сама работает на вашу программу: горный воздух, тишина, продукты с местной земли и сёла, в которых дожить до старости здоровым обычное дело. Вы привозите группу и ведёте практики, остальное наша забота: трансфер из любого города Грузии, встреча гостей, питание с учётом любой диеты и пространство, забронированное целиком под вас, где работе группы никто не помешает. А в свободные часы покажем регион: сванские башни и церкви с фресками, походы, туры по Сванетии, мастер-классы. Программу соберём под формат вашего ретрита. Организаторам даём готовый медиапакет: фотографии, текст о месте и аргументы, почему Сванетия, а не Бали или Португалия.",
+ fact_guests:"гостей + ведущий", fact_dome:"зал для практик", fact_meals:"питание в день включено", fact_group:"группа, всё пространство ваше",
+ am1_t:"Купольный зал · 120 м²",
+ am1_d:"Тёплый деревянный купол, где помещается вся группа: йога, дыхательные практики, медитация и вечерние встречи в любую погоду, а за панорамными окнами горы.",
+ am2_t:"Пять эко-коттеджей",
+ am2_d:"Деревянные коттеджи на двоих, у каждого своя ванная. Всего десять гостей, расселение спланируем вместе с вами.",
+ am3_t:"Сауна и пруд",
+ am3_d:"Пар и холодная вода в нескольких шагах от зала, готовое звено восстановления для вашей программы.",
+ am4_t:"Кухня и питание",
+ am4_d:"Три раза в день, из местных продуктов. Меню согласуем заранее: детокс, вегетарианское или безглютеновое, а на прощание сванский ужин за общим столом.",
+ am5_t:"Программа по региону",
+ am5_d:"Экскурсии, походы, туры и мастер-классы в свободные часы. Программа идёт отдельным пакетом, группу везде сопровождает проводник.",
+ ph_1:"Практика в зале", ph_2:"Купольный зал", ph_3:"Эко-коттедж", ph_4:"Сауна и пруд", ph_5:"Общий стол",
+ terms_kicker:"Условия", terms_title:"Пакеты под ваш формат",
+ terms_lead:"Shanaya сдаётся только целиком, одной группе, максимум десять гостей. В пакет входят все коттеджи, купольный зал, сауна с прудом и трёхразовое питание, поэтому стоимость заезда считается просто. Трансфер и программа по региону добавляются отдельно, под ваш маршрут и даты. Условия пакетов, правила отмены и предложение для повторных заездов вышлем в презентации.",
+ terms_li1:"Все коттеджи, зал, сауна и пруд",
+ terms_li2:"Питание всей группы включено в цену",
+ terms_li3:"Пакеты для йога-ретритов, программ восстановления и закрытых групп",
+ terms_li4:"Придержим даты, пока вы собираете группу",
+ deck_wa:"Презентация в WhatsApp", deck_tg:"Презентация в Telegram",
+ dates_kicker:"Даты", dates_title:"Календарь Shanaya",
+ dates_lead:"Занятые даты отмечены в календаре, остальные дни свободны. Организаторы обычно бронируют за три-шесть месяцев, поэтому за сезонными датами приходите заранее. Заявку подтвердим в тот же день.",
+ cal_placeholder:"Календарь занятости скоро появится здесь. Пока уточните даты в WhatsApp.",
+ dates_hint:"Календарь показывает брони всего комплекса.",
+ loc_kicker:"Как добраться", loc_title:"Логистика группы",
+ loc_lead:"Shanaya находится в Латали, между Местией и Бечо, двадцать минут на машине от Местии. Трансфер организуем из любого города Грузии отдельной услугой: гости прилетают в Тбилиси, Кутаиси или Батуми, оттуда группу привозим мы. Маршруты и время в пути найдёте в презентации.",
+ loc_addr:"Община Латали, муниципалитет Местия, Самегрело–Верхняя Сванетия, Грузия · 43.00820, 42.63173",
+ loc_open:"Открыть в Google Maps →",
+ book_kicker:"Запрос дат", book_title:"Запросите даты для своего ретрита",
+ book_lead:"Заполните форму, и WhatsApp или Telegram откроется с готовым сообщением. Ответим в тот же день, вышлем презентацию и придержим даты, пока вы собираете группу.",
+ f_name:"Имя", f_format:"Формат ретрита", f_guests:"Количество гостей", f_in:"Дата заезда", f_out:"Дата выезда", f_msg:"Дополнительная информация (питание, программа, трансфер)",
+ f_send_wa:"Отправить в WhatsApp", f_send_tg:"Отправить в Telegram",
+ foot_addr:"Община Латали, муниципалитет Местия, Самегрело–Верхняя Сванетия, Грузия",
+ wa_msg:(n,f,g,i,o,m)=>`Здравствуйте! Планирую ретрит в Shanaya Wellness Retreat, Сванетия.\nИмя: ${n}\nФормат: ${f}\nГостей: ${g}\nЗаезд: ${i}\nВыезд: ${o}${m?`\nДетали: ${m}`:""}`,
+ deck_msg:"Здравствуйте! Пришлите, пожалуйста, презентацию Shanaya Wellness Retreat."
+},
+ka:{
+ nav_stay:"ველნეს-ცენტრი", nav_terms:"პირობები", nav_dates:"თარიღები", nav_loc:"მდებარეობა", nav_book:"დაჯავშნა",
+ hero_eyebrow:"ლატალი · ზემო სვანეთი · 1 400 მ",
+ hero_sub:"ველნეს-ცენტრი სვანეთის მთებში, რომელიც მთლიანად თქვენს ჯგუფს ეკუთვნის: ხუთი ხის ეკო-კოტეჯი ათ სტუმარზე, პრაქტიკებისთვის განკუთვნილი 120 კვ.მ გუმბათოვანი დარბაზი, საუნა საბანაო ტბორით და დღეში სამჯერადი კვება. ერთი პაკეტი, ერთი ჯგუფი, გარეშე სტუმრები აქ არ არიან.",
+ cta_dates:"თარიღების მოთხოვნა WhatsApp-ით", cta_deck:"პრეზენტაციის მიღება",
+ stay_kicker:"ველნეს-ცენტრი", stay_title:"შექმნილია რეტრიტებისთვის",
+ stay_lead:"Shanaya ლატალის თემშია, მაღალმთიან სვანეთში, სადაც გარემო თავადვე მუშაობს თქვენი პროგრამისთვის: მთის ჰაერი, სიმშვიდე, ადგილზე მოყვანილი პროდუქტები და სოფლები, სადაც ხანდაზმულობამდე ჯანმრთელად ცხოვრება ჩვეულებრივი ამბავია. თქვენ ჯგუფი ჩამოგყავთ და პრაქტიკებს უძღვებით, დანარჩენი ჩვენი საზრუნავია: ტრანსფერი საქართველოს ნებისმიერი ქალაქიდან, სტუმრების დახვედრა, კვება ნებისმიერი დიეტის გათვალისწინებით და მთლიანად თქვენთვის დაჯავშნილი სივრცე, სადაც ჯგუფის მუშაობას არავინ შეუშლის ხელს. თავისუფალ საათებში კი რეგიონს გაგაცნობთ: სვანური კოშკები და მოხატული ეკლესიები, ლაშქრობები, ტურები სვანეთში, მასტერკლასები. პროგრამას თქვენი რეტრიტის ფორმატს მოვარგებთ. ორგანიზატორებს ვთავაზობთ მზა მედიაპაკეტს: ფოტოებს, ტექსტს ადგილის შესახებ და არგუმენტებს, რატომ სვანეთი და არა ბალი ან პორტუგალია.",
+ fact_guests:"სტუმარი + წამყვანი", fact_dome:"დარბაზი პრაქტიკებისთვის", fact_meals:"კვება დღეში, ფასში შედის", fact_group:"ჯგუფი, მთელი სივრცე თქვენია",
+ am1_t:"გუმბათოვანი დარბაზი · 120 კვ.მ",
+ am1_d:"თბილი ხის გუმბათი, სადაც მთელი ჯგუფი თავსდება: იოგა, სასუნთქი პრაქტიკები, მედიტაცია და საღამოს შეკრებები ნებისმიერ ამინდში, პანორამული ფანჯრებიდან კი მთები მოჩანს.",
+ am2_t:"ხუთი ეკო-კოტეჯი",
+ am2_d:"ხის კოტეჯები ორ სტუმარზე, თითოეულს საკუთარი სააბაზანო აქვს. სულ ათი სტუმარი, განთავსებას თქვენს ჯგუფთან ერთად დავგეგმავთ.",
+ am3_t:"საუნა და ტბორი",
+ am3_d:"ორთქლი და ცივი წყალი დარბაზიდან რამდენიმე ნაბიჯში, აღდგენის მზა რგოლი თქვენი პროგრამისთვის.",
+ am4_t:"სამზარეულო და კვება",
+ am4_d:"დღეში სამჯერ, ადგილობრივი პროდუქტებით. მენიუს წინასწარ შევათანხმებთ: დეტოქსი, ვეგეტარიანული თუ უგლუტენო კვება, ხოლო რეტრიტის დასასრულს — სვანური ვახშამი საერთო სუფრასთან.",
+ am5_t:"რეგიონული პროგრამა",
+ am5_d:"ექსკურსიები, ლაშქრობები, ტურები და მასტერკლასები თავისუფალ საათებში. პროგრამა ცალკე პაკეტია, ჯგუფს ყველგან გამყოლი ახლავს.",
+ ph_1:"პრაქტიკა დარბაზში", ph_2:"გუმბათოვანი დარბაზი", ph_3:"ეკო-კოტეჯი", ph_4:"საუნა და ტბორი", ph_5:"საერთო სუფრა",
+ terms_kicker:"პირობები", terms_title:"პაკეტები თქვენი ფორმატისთვის",
+ terms_lead:"Shanaya მხოლოდ მთლიანად ქირავდება, ერთ ჯგუფზე, მაქსიმუმ ათ სტუმარზე. პაკეტში შედის ყველა კოტეჯი, გუმბათოვანი დარბაზი, საუნა ტბორით და დღეში სამჯერადი კვება, ამიტომ ჩამოსვლის ღირებულების გამოთვლა მარტივია. ტრანსფერი და რეგიონული პროგრამა ცალკე ემატება, თქვენი მარშრუტისა და თარიღების მიხედვით. პაკეტების პირობებს, გაუქმების წესებსა და განმეორებითი ჯავშნის შეთავაზებას პრეზენტაციაში გამოგიგზავნით.",
+ terms_li1:"ყველა კოტეჯი, დარბაზი, საუნა და ტბორი",
+ terms_li2:"კვება მთელი ჯგუფისთვის ფასში შედის",
+ terms_li3:"პაკეტები იოგა-რეტრიტების, აღდგენითი პროგრამებისა და კერძო ჯგუფებისთვის",
+ terms_li4:"თარიღებს წინასწარ შეგინახავთ, სანამ ჯგუფს კრებთ",
+ deck_wa:"პრეზენტაცია WhatsApp-ით", deck_tg:"პრეზენტაცია Telegram-ით",
+ dates_kicker:"თარიღები", dates_title:"Shanaya-ს კალენდარი",
+ dates_lead:"დაკავებული თარიღები კალენდარში აღნიშნულია, დანარჩენი დღეები თავისუფალია. ორგანიზატორები ჩვეულებრივ სამი-ექვსი თვით ადრე ჯავშნიან, ამიტომ სეზონურ თარიღებზე ადრევე დაგვიკავშირდით. მოთხოვნას იმავე დღეს დაგიდასტურებთ.",
+ cal_placeholder:"დაკავებულობის კალენდარი მალე გამოჩნდება. ამასობაში თარიღები დააზუსტეთ WhatsApp-ით.",
+ dates_hint:"კალენდარი მთელი კომპლექსის ჯავშნებს აჩვენებს.",
+ loc_kicker:"მდებარეობა", loc_title:"ჯგუფის ლოგისტიკა",
+ loc_lead:"Shanaya ლატალის თემშია, მესტიასა და ბეჩოს შორის, მესტიიდან მანქანით ოცი წუთის სავალზე. ტრანსფერს საქართველოს ნებისმიერი ქალაქიდან მოვაწყობთ, ცალკე მომსახურებად: სტუმრები თბილისში, ქუთაისში ან ბათუმში ჩამოდიან, იქიდან კი ჯგუფი ჩვენ ჩამოგვყავს. მარშრუტებსა და გზაში დროის ხანგრძლივობას პრეზენტაციაში ნახავთ.",
+ loc_addr:"ლატალის თემი, მესტიის მუნიციპალიტეტი, სამეგრელო-ზემო სვანეთი, საქართველო · 43.00820, 42.63173",
+ loc_open:"გახსნა Google Maps-ში →",
+ book_kicker:"დაჯავშნა", book_title:"მოითხოვეთ თარიღები თქვენი რეტრიტისთვის",
+ book_lead:"შეავსეთ ფორმა და WhatsApp ან Telegram მზა შეტყობინებით გაიხსნება. გიპასუხებთ იმავე დღეს, გამოგიგზავნით პრეზენტაციას და თარიღებს წინასწარ შეგინახავთ, სანამ ჯგუფს კრებთ.",
+ f_name:"სახელი", f_format:"რეტრიტის ფორმატი", f_guests:"სტუმრების რაოდენობა", f_in:"ჩამოსვლის თარიღი", f_out:"გამგზავრების თარიღი", f_msg:"დამატებითი ინფორმაცია (კვება, პროგრამა, ტრანსფერი)",
+ f_send_wa:"გაგზავნა WhatsApp-ით", f_send_tg:"გაგზავნა Telegram-ით",
+ foot_addr:"ლატალის თემი, მესტიის მუნიციპალიტეტი, სამეგრელო-ზემო სვანეთი, საქართველო",
+ wa_msg:(n,f,g,i,o,m)=>`გამარჯობა! ვგეგმავ რეტრიტს Shanaya Wellness Retreat-ში, სვანეთში.\nსახელი: ${n}\nფორმატი: ${f}\nსტუმრები: ${g}\nჩამოსვლა: ${i}\nგამგზავრება: ${o}${m?`\nდეტალები: ${m}`:""}`,
+ deck_msg:"გამარჯობა! გთხოვთ გამომიგზავნოთ Shanaya Wellness Retreat-ის პრეზენტაცია."
+}
+};
+
+let lang = "en";
+const nav = (navigator.language||"en").slice(0,2);
+if(nav==="ru") lang="ru"; else if(nav==="ka") lang="ka";
+
+function apply(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const v = T[lang][el.dataset.i18n];
+    if(typeof v==="string") el.textContent = v;
+  });
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.lang===lang)));
+}
+document.querySelectorAll(".langs button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;apply();}));
+apply();
+
+if(TELEGRAM) document.body.classList.add("has-tg");
+
+/* hero photo: appears only if assets/hero.jpg exists */
+(function(){
+  const img = new Image();
+  img.onload = ()=>{const p=document.getElementById("heroPhoto");p.style.backgroundImage="url(assets/hero.jpg)";p.classList.add("on");};
+  img.src = "assets/hero.jpg";
+})();
+
+/* Google Calendar embed */
+if(CALENDAR_ID){
+  const box = document.getElementById("calbox");
+  box.innerHTML = "";
+  const f = document.createElement("iframe");
+  f.title = "Availability";
+  f.loading = "lazy";
+  f.src = "https://calendar.google.com/calendar/embed?src="+encodeURIComponent(CALENDAR_ID)
+        + "&ctz=Asia%2FTbilisi&mode=MONTH&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0";
+  box.appendChild(f);
+}
+
+/* messaging */
+function openWA(msg){window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");}
+function openTG(msg){window.open("https://t.me/"+TELEGRAM+"?text="+encodeURIComponent(msg),"_blank");}
+function formMsg(){
+  const g = id=>document.getElementById(id).value.trim();
+  return T[lang].wa_msg(g("fname")||"—", g("fformat")||"—", g("fguests")||"10", g("fin")||"—", g("fout")||"—", g("fmsg"));
+}
+document.getElementById("heroWa").addEventListener("click",()=>openWA(formMsg()));
+document.getElementById("heroDeck").addEventListener("click",()=>openWA(T[lang].deck_msg));
+document.getElementById("deckWa").addEventListener("click",()=>openWA(T[lang].deck_msg));
+document.getElementById("deckTg").addEventListener("click",()=>openTG(T[lang].deck_msg));
+document.getElementById("sendWa").addEventListener("click",()=>openWA(formMsg()));
+document.getElementById("sendTg").addEventListener("click",()=>openTG(formMsg()));
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
